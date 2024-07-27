@@ -1,6 +1,11 @@
 # Changelog
 
 --------------------------------------------
+[104.5112.12] - 2024.07.28
+
+* Upgrade to WebRTC-SDK M104.5112.12
+* support E2EE from M125
+
 [104.5112.10] - 2023.06.08
 
 * Upgrade to WebRTC-SDK M104.5112.10
