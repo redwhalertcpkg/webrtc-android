@@ -1,6 +1,11 @@
 # Changelog
 
 --------------------------------------------
+[104.5112.13] - 2024.0805
+
+* Upgrade to WebRTC-SDK M104.5112.13
+* support E2EE use sm4
+
 [104.5112.12] - 2024.07.28
 
 * Upgrade to WebRTC-SDK M104.5112.12
