@@ -2,3 +2,6 @@ build/
 .gradle/
 .DS_Store
 *.asc
+.idea
+local.properties
+libwebrtc.aar
