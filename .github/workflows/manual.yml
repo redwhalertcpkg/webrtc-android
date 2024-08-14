@@ -40,8 +40,8 @@ jobs:
       run: |
         echo $GPG_KEY_ARMOR | base64 --decode > ./release.asc
         gpg --quiet --output $GITHUB_WORKSPACE/release.gpg --dearmor ./release.asc
-        sed -i -e "s,nexusUsername=,nexusUsername=$NEXUS_USERNAME,g" gradle.properties
-        sed -i -e "s,nexusPassword=,nexusPassword=$NEXUS_PASSWORD,g" gradle.properties
+        sed -i -e "s,mavenCentralUsername=,mavenCentralUsername=$NEXUS_USERNAME,g" gradle.properties
+        sed -i -e "s,mavenCentralPassword=,mavenCentralPassword=$NEXUS_PASSWORD,g" gradle.properties
         sed -i -e "s,signing.keyId=,signing.keyId=$GPG_KEY_ID,g" gradle.properties
         sed -i -e "s,signing.password=,signing.password=$GPG_PASSWORD,g" gradle.properties
         sed -i -e "s,signing.secretKeyRingFile=,signing.secretKeyRingFile=$GITHUB_WORKSPACE/release.gpg,g" gradle.properties
@@ -53,7 +53,7 @@ jobs:
         NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
 
     - name: Publish to sonatype
-      run: ./gradlew publish
+      run: ./gradlew publishToMavenCentral --no-configuration-cache
 
     - name: Close and Release to maven
       run: ./gradlew closeAndReleaseRepository
