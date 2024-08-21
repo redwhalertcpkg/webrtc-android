@@ -10,6 +10,6 @@ This library is hosted on Maven Central. To include this library in your project
 
 ```gradle
   dependencies {
-    implementation 'com.redwhalertc.webrtc-sdk:android:104.5112.14'
+    implementation 'com.redwhalertc.webrtc-sdk:android:104.5112.15'
   }
 ```
